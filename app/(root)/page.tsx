@@ -7,6 +7,7 @@ export const revalidate = 3600 // revalidate the page every 1 hour
 
 export default async function Home() {
   const response = await fetch('https://jsonplaceholder.typicode.com/albums')
+  // next: {revalidate: 3600}
   if (!response.ok) throw new Error('The items to fetch are not available')
   const albums = await response.json()
   console.log(albums)
